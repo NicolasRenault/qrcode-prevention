@@ -24,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
 <script>
 	//TODO Change the API	
 	async function getRandomNumber() {
-		const apiUrl = 'https://cors-anywhere.herokuapp.com/http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&count=1';
+		const apiUrl = 'https://cors-anywhere.herokuapp.com/http://www.randomnumberapi.com/api/v1.0/random?min=100&max=100000&count=1';
 
 		try {
 			const response = await fetch(apiUrl);
