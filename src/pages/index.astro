@@ -23,7 +23,7 @@ import Layout from '../layouts/Layout.astro';
 
 <script>
 	//TODO Change the API	
-	async function getRandomNumber() {
+	async function getVisitorNumber() {
 		const apiUrl = 'https://cors-anywhere.herokuapp.com/http://www.randomnumberapi.com/api/v1.0/random?min=100&max=100000&count=1';
 
 		try {
@@ -36,6 +36,16 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 
-	getRandomNumber();
+	/**
+	 * Redirect to cat page with 0.1% chance
+	 */
+	function redirectToCat() {
+		const random = Math.floor(Math.random() * 1000);
+		if (random < 1) {
+			window.location.href = window.location.href + "cat";
+		}
+	}
 
+	getVisitorNumber();
+	redirectToCat();
 </script>
