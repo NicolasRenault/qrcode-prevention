@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout>
-	<h1>QrCode Prevention</h1>
-	<h2>Oops, seems like you openned a random QrCode like <span id="visitors">X</span> persons</h2>
-	<p>It could have gone really wrong, but you are safe now.</p>
+<Layout title='QrCode prevention'>
+	<h1>Oops, seems like you openned a random QrCode </h1>
+	<!-- like <span id="visitors">X</span> persons</h2> -->
+	<h2>It could have gone really wrong, but you are safe now.</h2>
 	<p>You need to be careful when scanning QrCodes, they can be used to steal your data, or even worse, to install malware on your device.</p>
 	
 	<h2>Here is some articles about QrCode security</h2>
@@ -22,20 +22,6 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-	//TODO Change the API	
-	async function getVisitorNumber() {
-		const apiUrl = 'https://cors-anywhere.herokuapp.com/http://www.randomnumberapi.com/api/v1.0/random?min=100&max=100000&count=1';
-
-		try {
-			const response = await fetch(apiUrl);
-			const data = await response.json();
-			console.log('Random Number:', data[0]);
-			document.getElementById('visitors').innerHTML = data[0];
-		} catch (error) {
-			console.error('Error:', error.message);
-		}
-	}
-
 	/**
 	 * Redirect to cat page with 0.1% chance
 	 */
@@ -46,6 +32,5 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 
-	getVisitorNumber();
 	redirectToCat();
 </script>
