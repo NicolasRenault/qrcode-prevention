@@ -9,12 +9,11 @@ import Layout from '../layouts/Layout.astro';
 	<p>You need to be careful when scanning QrCodes, they can be used to steal your data, or even worse, to install malware on your device.</p>
 	
 	<h2>Here is some articles about QrCode security</h2>
-	<!-- TODO Mettre de vrais liens -->
-	<ul>
-		<li><a href="https://www.comparitech.com/blog/information-security/qr-code-security-risks/">https://www.comparitech.com/blog/information-security/qr-code-security-risks/</a></li>
-		<li><a href="https://www.csoonline.com/article/3574984/qr-codes-are-being-abused-by-digital-criminals.html">https://www.csoonline.com/article/3574984/qr-codes-are-being-abused-by-digital-criminals.html</a></li>
-		<li><a href="https://www.bleepingcomputer.com/news/security/android-malware-uses-qr-codes-to-steal-your-banking-info/">https://www.bleepingcomputer.com/news/security/android-malware-uses-qr-codes-to-steal-your-banking-info/</a></li>
-		<li><a href="https://www.forbes.com/sites/zakdoffman/2020/07/12/qr-code-warning-why-you-should-not-use-qr-codes/">https://www.forbes.com/sites/zakdoffman/2020/07/12/qr-code-warning-why-you-should-not-use-qr-codes/</a></li>
+	<ul id="articles">
+		<li><a href="https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/">I Don't Scan QR Codes, And Neither Should You</a></li>
+		<li><a href="https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code">Are QR code safe?</a></li>
+		<li><a href="https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan">What is a QR code and are thet safe?</a></li>
+		<li><a href="https://www.computer.org/publications/tech-news/trends/qr-code-risks">Risks of Using QR Codes and How To Mitigate it</a></li>
 	</ul>
 	<p>Stay safe, and don't open random QrCodes.</p>
 	<img src="/rickroll.gif" alt="Rick"  height="400"/>	
@@ -22,6 +21,21 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
+	const articles = {
+		"en": {
+			"https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/": "I Don't Scan QR Codes, And Neither Should You",
+			"https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code": "Are QR code safe?",
+			"https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan": "What is a QR code and are thet safe?",
+			"https://www.computer.org/publications/tech-news/trends/qr-code-risks": "Risks of Using QR Codes and How To Mitigate it",
+		},
+		"fr-FR": {
+			"https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques/cybersecurite/qr-code-quelle-securite-et-quelles": "QR Code : quelle sécurité et quelles précautions prendre ?",
+			"https://www.01net.com/actualites/mefiez-vous-de-ces-codes-qr-qui-peuvent-vous-couter-tres-cher.html": "Méfiez-vous de ces codes QR qui peuvent vous coûter très cher",
+			"https://www.rtl.fr/actu/sciences-tech/pourquoi-il-faut-se-mefier-des-qr-codes-7900258500": "Pourquoi il faut se méfier des QR codes",
+			"https://www.lebigdata.fr/qr-code-fbi-securite": "QR Code : le FBI met en garde contre les risques de sécurité",
+		}
+	};
+
 	/**
 	 * Redirect to cat page with 0.1% chance
 	 */
