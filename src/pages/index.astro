@@ -23,16 +23,16 @@ import Layout from '../layouts/Layout.astro';
     
     <h2>Here are some articles about QrCode security</h2>
     <ul id="articles">
-		<li><a href="https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/">I Don't Scan QR Codes, And Neither Should You</a></li>
-		<li><a href="https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code">Are QR code safe?</a></li>
-		<li><a href="https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan">What is a QR code and are thet safe?</a></li>
-		<li><a href="https://www.computer.org/publications/tech-news/trends/qr-code-risks">Risks of Using QR Codes and How To Mitigate it</a></li>
+		<li><a target="_blank" href="https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/">I Don't Scan QR Codes, And Neither Should You</a></li>
+		<li><a target="_blank" href="https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code">Are QR code safe?</a></li>
+		<li><a target="_blank" href="https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan">What is a QR code and are thet safe?</a></li>
+		<li><a target="_blank" href="https://www.computer.org/publications/tech-news/trends/qr-code-risks">Risks of Using QR Codes and How To Mitigate it</a></li>
 	</ul>
 	<p>Stay safe, and don't open random QrCodes.</p>
 	<img src="/rickroll.gif" alt="Rick"  height="400"/>
 	<p class="small">This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.</p>
 	<p class="small">Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.</p>
-	<nr-logo link size="sm"></nr-logo>
+	<p class="small"><span>Check out the source code on </span><a target="_blank" href="https://github.com/NicolasRenault/qrcode-prevention" title="Github">GitHub</a>.</p>
 </Layout>
 
 <script>
@@ -58,8 +58,11 @@ import Layout from '../layouts/Layout.astro';
 	function getBrowser() {
 		const userAgent = navigator.userAgent;
 		let browserName = "Unknown";
+
 		if (userAgent.indexOf("Opera") > -1 || userAgent.indexOf("OPR") > -1) {
 			browserName = "Opera";
+		} else if (userAgent.indexOf("Edg") > -1 || userAgent.indexOf("Edge") > -1) {
+			browserName = "Edge";
 		} else if (userAgent.indexOf("Chrome") > -1) {
 			browserName = "Chrome";
 		} else if (userAgent.indexOf("Safari") > -1) {
@@ -69,8 +72,9 @@ import Layout from '../layouts/Layout.astro';
 		} else if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident/") > -1) {
 			browserName = "IE";
 		}
+
 		return browserName;
-	}
+}
 
 	/**
 	 * Get the OS name
@@ -94,17 +98,6 @@ import Layout from '../layouts/Layout.astro';
 		}
 		return osName;
 	}
-
-	// function getMobileOS() {
-	// 	const userAgent = navigator.userAgent;
-	// 	let osName = "Unknown";
-	// 	if (userAgent.indexOf("Android") > -1) {
-	// 		osName = "Android";
-	// 	} else if (userAgent.indexOf("iPhone") > -1) {
-	// 		osName = "iOS";
-	// 	}
-	// 	return osName;
-	// }
 
 	/**
 	 * Get the language
