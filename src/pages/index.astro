@@ -1,8 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const languages = ["en", "fr"];
+const defaultLanguage = "en";
+const languagesName = {
+	"en": "English",
+	"fr": "Français",
+};
 ---
 
 <Layout title='QrCode prevention'>
+	
+	<label class="small" for="languages_selector">Website language:</label>
+	<select class="language" id="languages_selector">
+		{languages.map((code) => {
+			return (<option value={code}>{languagesName[code]}</option>)
+			})
+		}
+	</select>
 	<h1>Oops, seems like you openned a random QrCode </h1>
 	<!-- like <span id="visitors">X</span> persons</h2> -->
 	<h2>It could have gone really wrong, but you are safe now.</h2>
@@ -35,7 +50,7 @@ import Layout from '../layouts/Layout.astro';
 	<p class="small"><span>Check out the source code on </span><a target="_blank" href="https://github.com/NicolasRenault/qrcode-prevention" title="Github">GitHub</a>.</p>
 </Layout>
 
-<script>
+<script define:vars={{defaultLanguage}}>
 	const articles = {
 		"en": {
 			"https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/": "I Don't Scan QR Codes, And Neither Should You",
@@ -43,13 +58,48 @@ import Layout from '../layouts/Layout.astro';
 			"https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan": "What is a QR code and are thet safe?",
 			"https://www.computer.org/publications/tech-news/trends/qr-code-risks": "Risks of Using QR Codes and How To Mitigate it",
 		},
-		"fr-FR": {
+		"fr": {
 			"https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques/cybersecurite/qr-code-quelle-securite-et-quelles": "QR Code : quelle sécurité et quelles précautions prendre ?",
 			"https://www.01net.com/actualites/mefiez-vous-de-ces-codes-qr-qui-peuvent-vous-couter-tres-cher.html": "Méfiez-vous de ces codes QR qui peuvent vous coûter très cher",
 			"https://www.rtl.fr/actu/sciences-tech/pourquoi-il-faut-se-mefier-des-qr-codes-7900258500": "Pourquoi il faut se méfier des QR codes",
 			"https://www.lebigdata.fr/qr-code-fbi-securite": "QR Code : le FBI met en garde contre les risques de sécurité",
 		}
 	};
+
+	const languageSelector = document.getElementById("languages_selector");
+	languageSelector.addEventListener("change", (event) => {
+		handleTanslation(event.target.value);
+	});
+
+	/**
+	 * Handle the translation by checking if the language is available and calling translations methods
+	 */
+	function handleTanslation(lang) {
+		if (!articles[lang]) {
+			lang = defaultLanguage;
+		}
+		changeArticleByLang(lang);
+		languageSelector.value = lang;
+	}
+
+	/**
+	 * Change the articles list by language
+	 */
+	function changeArticleByLang(lang) {
+		
+		const articlesList = document.getElementById("articles");
+		articlesList.innerHTML = "";
+		for (const [link, title] of Object.entries(articles[lang])) {
+			const li = document.createElement("li");
+			const a = document.createElement("a");
+			a.href = link;
+			a.target = "_blank";
+			a.innerText = title.toString();
+			li.appendChild(a);
+			articlesList.appendChild(li);
+		}
+	}
+
 
 	/**
 	 * Get the browser name
