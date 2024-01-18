@@ -10,47 +10,89 @@ const languagesName = {
 ---
 
 <Layout title='QrCode prevention'>
-	
-	<label class="small" for="languages_selector">Website language:</label>
+	<label class="small" for="languages_selector" data-TwoMi18n="website_language">Website language:</label>
 	<select class="language" id="languages_selector">
 		{languages.map((code) => {
 			return (<option value={code}>{languagesName[code]}</option>)
 			})
 		}
 	</select>
-	<h1>Oops, seems like you openned a random QrCode </h1>
+	<h1 data-TwoMi18n="title">Oops, seems like you openned a random QrCode </h1>
 	<!-- like <span id="visitors">X</span> persons</h2> -->
-	<h2>It could have gone really wrong, but you are safe now.</h2>
-    <p>You need to be careful when scanning QrCodes, they can be used to steal your data, or even worse, to install malware on your device.</p>
+	<h2 data-TwoMi18n="title2">It could have gone really wrong, but you are safe now.</h2>
+    <p data-TwoMi18n="title3">You need to be careful when scanning QrCodes, they can be used to steal your data, or even worse, to install malware on your device.</p>
 
-    <h2>Here is some data that I have access to about you</h2>
+    <h2 data-TwoMi18n="data_title">Here is some data that I have access to about you</h2>
     <ul id="data">
-        <li>Your IP address: <span id="ip"></span></li>
-        <li>Your browser: <span id="browser"></span></li>
-        <li>Your OS: <span id="os"></span></li>
-        <li>Your language: <span id="language"></span></li>
-        <li>Your country: <span id="country"></span></li>
-        <li>Your city: <span id="city"></span></li>
+        <li><span data-TwoMi18n="data_ip">Your IP address:</span> <span id="ip"></span></li>
+        <li><span data-TwoMi18n="data_browser">Your browser:</span> <span id="browser"></span></li>
+        <li><span data-TwoMi18n="data_OS">Your OS:</span> <span id="os"></span></li>
+        <li><span data-TwoMi18n="data_language">Your language:</span> <span id="language"></span></li>
+        <li><span data-TwoMi18n="data_country">Your country:</span> <span id="country"></span></li>
+        <li><span data-TwoMi18n="data_city">Your city:</span> <span id="city"></span></li>
     </ul>
 
-    <p>And that's just a few of them.</p>
-    <p>Here is a website that can give you more information about your device: <a href="https://www.deviceinfo.me/">https://www.deviceinfo.me/</a></p>
+    <p data-TwoMi18n="data_p1">And that's just a few of them.</p>
+    <p><span data-TwoMi18n="data_p2">Here is a safe website that can give you more information about your device:</span> <a href="https://www.deviceinfo.me/">https://www.deviceinfo.me/</a></p>
     
-    <h2>Here are some articles about QrCode security</h2>
+    <h2 data-TwoMi18n="article_title">Here are some articles about QrCode security</h2>
     <ul id="articles">
 		<li><a target="_blank" href="https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/">Forbes.com: I Don't Scan QR Codes, And Neither Should You</a></li>
 		<li><a target="_blank" href="https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code">Malwarebytes.com: Are QR code safe?</a></li>
 		<li><a target="_blank" href="https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan">Kaspersky.com: What is a QR code and are thet safe?</a></li>
 		<li><a target="_blank" href="https://www.computer.org/publications/tech-news/trends/qr-code-risks">Computer.org: Risks of Using QR Codes and How To Mitigate it</a></li>
 	</ul>
-	<p>Stay safe, and don't open random QrCodes.</p>
+	<p data-TwoMi18n="stay_safe">Stay safe, and don't open random QrCodes.</p>
 	<img src="/rickroll.gif" alt="Rick"  height="400"/>
-	<p class="small">This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.</p>
-	<p class="small">Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.</p>
-	<p class="small"><span>Check out the source code on </span><a target="_blank" href="https://github.com/NicolasRenault/qrcode-prevention" title="Github">GitHub</a>.</p>
+	<p class="small" data-TwoMi18n="disclaimer1">This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.</p>
+	<p class="small" data-TwoMi18n="disclaimer2">Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.</p>
+	<p class="small"><span data-TwoMi18n="disclaimer3">Check out the source code on </span><a target="_blank" href="https://github.com/NicolasRenault/qrcode-prevention" title="Github">GitHub</a>.</p>
 </Layout>
 
-<script define:vars={{defaultLanguage}}>
+<script defer define:vars={{defaultLanguage}}>
+	const translations = {
+		default: "en",
+		"en": {
+			"website_language": "Website language:",
+			"title": "Oops, seems like you openned a random QrCode",
+			"title2": "It could have gone really wrong, but you are safe now.",
+			"title3": "You need to be careful when scanning QrCodes, they can be used to steal your data, or even worse, to install malware on your device.",
+			"data_title": "Here is some data that I have access to about you",
+			"data_ip": "Your IP address:",
+			"data_browser": "Your browser:",
+			"data_OS": "Your OS:",
+			"data_language": "Your language:",
+			"data_country": "Your country:",
+			"data_city": "Your city:",
+			"data_p1": "And that's just a few of them.",
+			"data_p2": "Here is a safe website that can give you more information about your device:",
+			"article_title": "Here are some articles about QrCode security",
+			"stay_safe": "Stay safe, and don't open random QrCodes.",
+			"disclaimer1": "This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.",
+			"disclaimer2": "Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.",
+			"disclaimer3": "Check out the source code on ",
+		},
+		"fr": {
+			"website_language": "Langue du site:",
+			"title": "Oops, il semblerait que vous ayez ouvert un QrCode inconnu",
+			"title2": "Cela aurait pu mal se passer, mais vous êtes en sécurité maintenant.",
+			"title3": "Vous devez faire attention lorsque vous scannez des QrCodes, ils peuvent être utilisés pour voler vos données, ou pire, pour installer des virus sur votre appareil.",
+			"data_title": "Voici quelques données auxquelles j'ai accès à votre sujet",
+			"data_ip": "Votre adresse IP:",
+			"data_browser": "Votre navigateur:",
+			"data_OS": "Votre système d'exploitation:",
+			"data_language": "Votre langue:",
+			"data_country": "Votre pays:",
+			"data_city": "Votre ville:",
+			"data_p1": "Et ce n'est qu'une petite partie.",
+			"data_p2": "Voici un site web sûr qui peut vous donner plus d'informations sur votre appareil:",
+			"article_title": "Voici quelques articles sur la sécurité des QrCodes",
+			"stay_safe": "Restez en sécurité, et ne scannez pas de QrCodes inconnus.",
+			"disclaimer1": "Ce site web est destiné à des fins éducatives uniquement. Il ne s'engage pas dans le spamming ou l'appropriation.",
+			"disclaimer2": "De plus, ce site web ne stocke ni ne conserve aucune donnée personnelle de ses visiteurs. Les données affichées sur le site sont temporaires et sont supprimées dès que la session de l'utilisateur se termine.",
+			"disclaimer3": "Consultez le code source sur ",
+		}
+	}
 	const articles = {
 		"en": {
 			"https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/": "Forbes.com: I Don't Scan QR Codes, And Neither Should You",
@@ -70,14 +112,29 @@ const languagesName = {
 	languageSelector.addEventListener("change", (event) => {
 		handleTanslation(event.target.value);
 	});
+	
+	let mi18n;
 
+	window.addEventListener("load", () => {
+		mi18n = new TwoMi18n(translations);
+		setUpNavigatorTranslation();
+	});
+
+	/**
+	 * Set up the navigator translation at format xx. 
+	 */
+	function setUpNavigatorTranslation() {
+		const lang = navigator.language.length > 2 ? navigator.language.split("-")[0] : navigator.language;
+		handleTanslation(lang);
+		languageSelector.value = lang;
+	}
+
+	
 	/**
 	 * Handle the translation by checking if the language is available and calling translations methods
 	 */
 	function handleTanslation(lang) {
-		if (!articles[lang]) {
-			lang = defaultLanguage;
-		}
+		mi18n.loadTranslations(lang);
 		changeArticleByLang(lang);
 		languageSelector.value = lang;
 	}
