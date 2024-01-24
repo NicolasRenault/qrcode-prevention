@@ -134,7 +134,7 @@ const languagesName = {
 	 * Handle the translation by checking if the language is available and calling translations methods
 	 */
 	function handleTanslation(lang) {
-		mi18n.loadTranslations(lang);
+		mi18n.translateHTML(lang);
 		changeArticleByLang(lang);
 		languageSelector.value = lang;
 	}
