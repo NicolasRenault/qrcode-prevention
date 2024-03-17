@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ViewCounter from '../components/ViewCounter.astro';
 
 const languages = ["en", "fr"];
 const defaultLanguage = "en";
@@ -18,7 +19,7 @@ const languagesName = {
 		}
 	</select>
 	<h1 data-TwoMi18n="title">Oops, seems like you scanned a random QrCode </h1>
-	<!-- like <span id="visitors">X</span> persons</h2> -->
+	<ViewCounter />
 	<h2 data-TwoMi18n="title2">It could have gone really wrong, but you are safe now.</h2>
     <p data-TwoMi18n="title3">You need to be careful when scanning QrCodes, they can be used to steal your data, or even worse, to install malware on your device.</p>
 
@@ -71,6 +72,8 @@ const languagesName = {
 			"disclaimer1": "This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.",
 			"disclaimer2": "Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.",
 			"disclaimer3": "Check out the source code on ",
+			"viewCounter_like" : "Like",
+			"viewCounter_peoples" : "other peoples.",
 		},
 		"fr": {
 			"website_language": "Langue du site:",
@@ -91,6 +94,8 @@ const languagesName = {
 			"disclaimer1": "Ce site web est destiné à des fins éducatives uniquement. Il ne s'engage pas dans le spamming ou l'appropriation.",
 			"disclaimer2": "De plus, ce site web ne stocke ni ne conserve aucune données personnelle de ses visiteurs. Les données affichées sur le site sont temporaires et sont supprimées dès que la session de l'utilisateur se termine.",
 			"disclaimer3": "Consultez le code source sur ",
+			"viewCounter_like" : "Comme",
+			"viewCounter_peoples" : "autres personnes.",
 		}
 	}
 	const articles = {

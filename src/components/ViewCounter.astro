@@ -1,0 +1,20 @@
+---
+import { db, Views } from 'astro:db';
+
+const views = await db.select().from(Views).limit(1);
+const numberOfViews = views[0]?.views;
+
+await db.update(Views).set({ views: numberOfViews + 1 });
+
+---
+
+<h2>
+    <span data-TwoMi18n="viewCounter_like">Like</span> <span id="visitors">{ numberOfViews ?? "X" }</span> <span data-TwoMi18n="viewCounter_peoples">other peoples.</span>
+</h2>
+
+<style>
+    h2 {
+        margin-block-start: -1em;
+        text-decoration: underline;
+    }
+</style>
