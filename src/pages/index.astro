@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const languages = ["en", "fr"];
+const languages = ["en", "fr", "it"];
 const defaultLanguage = "en";
 const languagesName = {
 	"en": "English",
 	"fr": "Français",
+	"it": "Italiano"
 };
 ---
 
@@ -93,6 +94,26 @@ const languagesName = {
 			"disclaimer1": "Ce site web est destiné à des fins éducatives uniquement. Il ne s'engage pas dans le spamming ou l'appropriation.",
 			"disclaimer2": "De plus, ce site web ne stocke ni ne conserve aucune données personnelle de ses visiteurs. Les données affichées sur le site sont temporaires et sont supprimées dès que la session de l'utilisateur se termine.",
 			"disclaimer3": "Consultez le code source sur ",
+		},
+		"it": {
+			"website_language": "Lingua del sito:",
+			"title": "Ops, sembra che tu abbia scansionato un QrCode casuale",
+			"title2": "Potrebbe essere andata davvero male, ma ora sei al sicuro.",
+			"title3": "Devi fare attenzione quando scansioni i QrCode, possono essere utilizzati per rubare i tuoi dati, o peggio, per installare malware sul tuo dispositivo.",
+			"data_title": "Ecco alcuni dati a cui ho accesso su di te",
+			"data_ip": "Il tuo indirizzo IP:",
+			"data_browser": "Il tuo browser:",
+			"data_OS": "Il tuo sistema operativo:",
+			"data_language": "La tua lingua:",
+			"data_country": "Il tuo paese:",
+			"data_city": "La tua città:",
+			"data_p1": "E questo è solo un piccolo esempio.",
+			"data_p2": "Ecco un sito web sicuro che può darti più informazioni sul tuo dispositivo:",
+			"article_title": "Ecco alcuni articoli sulla sicurezza dei QrCode",
+			"stay_safe": "Stai al sicuro e non aprire QrCode casuali.",
+			"disclaimer1": "Questo sito web è destinato esclusivamente a scopi educativi. Non si occupa di spam o appropriazione.",
+			"disclaimer2": "Inoltre, questo sito web non memorizza né conserva alcun dato personale dei suoi visitatori. I dati visualizzati sul sito sono temporanei e vengono eliminati non appena termina la sessione dell'utente.",
+			"disclaimer3": "Consulta il codice sorgente su "
 		}
 	}
 	const articles = {
@@ -107,6 +128,12 @@ const languagesName = {
 			"https://www.01net.com/actualites/mefiez-vous-de-ces-codes-qr-qui-peuvent-vous-couter-tres-cher.html": "01net.com: Méfiez-vous de ces codes QR qui peuvent vous coûter très cher",
 			"https://www.rtl.fr/actu/sciences-tech/pourquoi-il-faut-se-mefier-des-qr-codes-7900258500": "rtl.fr: Pourquoi il faut se méfier des QR codes",
 			"https://www.lebigdata.fr/qr-code-fbi-securite": "lebigdata.fr: QR Code : le FBI met en garde contre les risques de sécurité",
+		},
+		"it": {
+			"https://www.01net.it/qr-code-meglio-non-fidarsi-7-consigli-di-sicurezza-da-cyberark/": "O1net.it: QR code, meglio non fidarsi: 7 consigli di sicurezza da CyberArk",
+			"https://www.insic.it/privacy-e-sicurezza/information-security/qr-code-come-utilizzarlo-in-sicurezza/": " insic.it: Come usare il QR Code in sicurezza",
+			"https://casa.tiscali.it/magazine/articoli/i-rischi-nascosti-nei-QR-Code/de989682-191a-11ee-8244-005056a86fbe/": "casa.tiscali.it: I rischi nascosti dei QR Code. Come usarli senza avere problemi di sicurezza",
+			"https://www.html.it/articoli/la-sicurezza-dei-qr-code/": "html.it: La sicurezza dei QR Code"
 		}
 	};
 
