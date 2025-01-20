@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const languages = ["en", "fr", "it"];
+const languages = ["en", "fr", "it", "nl"];
 const defaultLanguage = "en";
 const languagesName = {
 	"en": "English",
 	"fr": "Français",
-	"it": "Italiano"
+	"it": "Italiano",
+	"nl": "Dutch"
 };
 ---
 
@@ -114,6 +115,26 @@ const languagesName = {
 			"disclaimer1": "Questo sito web è destinato esclusivamente a scopi educativi. Non si occupa di spam o appropriazione.",
 			"disclaimer2": "Inoltre, questo sito web non memorizza né conserva alcun dato personale dei suoi visitatori. I dati visualizzati sul sito sono temporanei e vengono eliminati non appena termina la sessione dell'utente.",
 			"disclaimer3": "Consulta il codice sorgente su "
+		},
+		"nl": {
+			"website_language": "Website taal:",
+			"title": "Oeps, het lijkt erop dat je een willekeurige QrCode hebt gescand",
+			"title2": "Het had echt fout kunnen gaan, maar je bent nu veilig.",
+			"title3": "Je moet voorzichtig zijn bij het scannen van QrCodes, ze kunnen worden gebruikt om je gegevens te stelen, of erger nog, om malware op je apparaat te installeren.",
+			"data_title": "Hier zijn enkele gegevens waarover ik toegang heb tot jou",
+			"data_ip": "Je IP-adres:",
+			"data_browser": "Je browser:",
+			"data_OS": "Je besturingssysteem:",
+			"data_language": "Je taal:",
+			"data_country": "Je land:",
+			"data_city": "Je stad:",
+			"data_p1": "En dat is nog maar een klein deel.",
+			"data_p2": "Hier is een veilige website die je meer informatie kan geven over je apparaat:",
+			"article_title": "Hier zijn enkele artikelen over QrCode-beveiliging",
+			"stay_safe": "Blijf veilig en open geen willekeurige QrCodes.",
+			"disclaimer1": "Deze website is uitsluitend bedoeld voor educatieve doeleinden. Het houdt zich niet bezig met spammen of toe-eigening.",
+			"disclaimer2": "Bovendien slaat deze website geen persoonlijke gegevens van zijn bezoekers op of behoudt deze niet. De gegevens die op de site worden weergegeven, zijn tijdelijk en worden verwijderd zodra de gebruikerssessie eindigt.",
+			"disclaimer3": "Bekijk de broncode op "
 		}
 	}
 	const articles = {
@@ -134,6 +155,12 @@ const languagesName = {
 			"https://www.insic.it/privacy-e-sicurezza/information-security/qr-code-come-utilizzarlo-in-sicurezza/": " insic.it: Come usare il QR Code in sicurezza",
 			"https://casa.tiscali.it/magazine/articoli/i-rischi-nascosti-nei-QR-Code/de989682-191a-11ee-8244-005056a86fbe/": "casa.tiscali.it: I rischi nascosti dei QR Code. Come usarli senza avere problemi di sicurezza",
 			"https://www.html.it/articoli/la-sicurezza-dei-qr-code/": "html.it: La sicurezza dei QR Code"
+		},
+		"nl": {
+			"https://nl.qrcodechimp.com/qr-code-security-guide/": "Qrcodechimp.com: QR-codebeveiliging: een complete gids voor merken en gebruikers",
+			"https://www.politie.be/5998/nl/nieuws/veilig-surfen-hackers-gebruiken-qr-codes-om-geld-en-gegevens-te-stelen": "Politie.be: Veilig surfen: hackers gebruiken QR-codes om geld en gegevens te stelen",
+			"https://www.androidplanet.nl/nieuws/quishing-herkennen-en-voorkomen/": "Androidplanet.nl: Phishing en quishing herkennen en voorkomen: zo bescherm je jezelf",
+			"https://www.kaspersky.nl/resource-center/definitions/what-is-a-qr-code-how-to-scan": "Kaspersky.nl: Wat is een QR-code en zijn ze veilig?"
 		}
 	};
 
