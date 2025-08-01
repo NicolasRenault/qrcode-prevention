@@ -12,6 +12,12 @@ const languagesName = {
 ---
 
 <Layout title='QrCode prevention'>
+	<div id="rickroll">
+		<video  width="400" autoplay loop muted playsinline>
+			<source src="/rickroll.webm" type="video/webm">
+		</video>
+	</div>
+
 	<label class="small" for="languages_selector" data-TwoMi18n="website_language">Website language:</label>
 	<select class="language" id="languages_selector">
 		{languages.map((code) => {
@@ -19,9 +25,9 @@ const languagesName = {
 			})
 		}
 	</select>
-	<h1 data-TwoMi18n="title">Oops, seems like you scanned a random QrCode </h1>
+	<h1 data-TwoMi18n="title">Got you!</h1>
 	<!-- like <span id="visitors">X</span> persons</h2> -->
-	<h2 data-TwoMi18n="title2">It could have gone really wrong, but you are safe now.</h2>
+	<h2 data-TwoMi18n="title2">Seriously though, you clicked on a random QrCode and it could have gone really wrong, but you are safe now.</h2>
     <p data-TwoMi18n="title3">You need to be careful when scanning QrCodes, they can be used to steal your data, or even worse, to install malware on your device.</p>
 
     <h2 data-TwoMi18n="data_title">Here is some data that I have access to about you</h2>
@@ -45,21 +51,27 @@ const languagesName = {
 		<li><a target="_blank" href="https://www.computer.org/publications/tech-news/trends/qr-code-risks">Computer.org: Risks of Using QR Codes and How To Mitigate it</a></li>
 	</ul>
 	<p data-TwoMi18n="stay_safe">Stay safe, and don't open random QrCodes.</p>
-	<video width="400" height="400" autoplay loop muted playsinline>
-		<source src="/rickroll.webm" type="video/webm">
-	</video>
 	<p class="small" data-TwoMi18n="disclaimer1">This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.</p>
 	<p class="small" data-TwoMi18n="disclaimer2">Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.</p>
 	<p class="small"><span data-TwoMi18n="disclaimer3">Check out the source code on </span><a target="_blank" href="https://github.com/NicolasRenault/qrcode-prevention" title="Github">GitHub</a>.</p>
 </Layout>
+
+<style>
+	#rickroll {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 15vh 0;
+	}
+</style>
 
 <script defer define:vars={{defaultLanguage}}>
 	const translations = {
 		default: "en",
 		"en": {
 			"website_language": "Website language:",
-			"title": "Oops, seems like you scanned a random QrCode",
-			"title2": "It could have gone really wrong, but you are safe now.",
+			"title": "Got you!",
+			"title2": "Seriously though, you clicked on a random QrCode and it could have gone really wrong, but you are safe now.",
 			"title3": "You need to be careful when scanning QrCodes, they can be used to steal your data, or even worse, to install malware on your device.",
 			"data_title": "Here is some data that I have access to about you",
 			"data_ip": "Your IP address:",
@@ -78,8 +90,8 @@ const languagesName = {
 		},
 		"fr": {
 			"website_language": "Langue du site:",
-			"title": "Oups, il semble que vous ayez scanné un QrCode aléatoire",
-			"title2": "Cela aurait pu mal se passer, mais vous êtes en sécurité maintenant.",
+			"title": "Je t'ai eu !",
+			"title2": "Plus sérieusement, vous avez cliqué sur un QR Code aléatoire et cela aurait pu très mal tourner, mais vous êtes en sécurité maintenant.",
 			"title3": "Vous devez faire attention lorsque vous scannez des QrCodes, ils peuvent être utilisés pour voler vos données, ou pire, pour installer des virus sur votre appareil.",
 			"data_title": "Voici quelques données auxquelles j'ai accès à votre sujet",
 			"data_ip": "Votre adresse IP:",
@@ -98,8 +110,8 @@ const languagesName = {
 		},
 		"it": {
 			"website_language": "Lingua del sito:",
-			"title": "Ops, sembra che tu abbia scansionato un QrCode casuale",
-			"title2": "Potrebbe essere andata davvero male, ma ora sei al sicuro.",
+			"title": "Ti ho preso!",
+			"title2": "Seriamente, hai cliccato su un QrCode casuale e sarebbe potuto andare davvero male, ma ora sei al sicuro.",
 			"title3": "Devi fare attenzione quando scansioni i QrCode, possono essere utilizzati per rubare i tuoi dati, o peggio, per installare malware sul tuo dispositivo.",
 			"data_title": "Ecco alcuni dati a cui ho accesso su di te",
 			"data_ip": "Il tuo indirizzo IP:",
@@ -118,8 +130,8 @@ const languagesName = {
 		},
 		"nl": {
 			"website_language": "Website taal:",
-			"title": "Oeps, het lijkt erop dat je een willekeurige QrCode hebt gescand",
-			"title2": "Het had echt fout kunnen gaan, maar je bent nu veilig.",
+			"title": "Erwischt!",
+			"title2": "Aber mal ehrlich, du hast einen zufälligen QR-Code angeklickt und es hätte wirklich schiefgehen können, aber jetzt bist du sicher.",
 			"title3": "Je moet voorzichtig zijn bij het scannen van QrCodes, ze kunnen worden gebruikt om je gegevens te stelen, of erger nog, om malware op je apparaat te installeren.",
 			"data_title": "Hier zijn enkele gegevens waarover ik toegang heb tot jou",
 			"data_ip": "Je IP-adres:",
