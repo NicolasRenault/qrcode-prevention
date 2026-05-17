@@ -21,7 +21,7 @@ const languagesName = {
 	<label class="small" for="languages_selector" data-TwoMi18n="website_language">Website language:</label>
 	<select class="language" id="languages_selector">
 		{languages.map((code) => {
-			return (<option value={code}>{languagesName[code]}</option>)
+			return (<option value={code}>{languagesName[code as keyof typeof languagesName]}</option>)
 			})
 		}
 	</select>
@@ -45,10 +45,10 @@ const languagesName = {
     
     <h2 data-TwoMi18n="article_title">Here are some articles about QrCode security</h2>
     <ul id="articles">
-		<li><a target="_blank" href="https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/">Forbes.com: I Don't Scan QR Codes, And Neither Should You</a></li>
-		<li><a target="_blank" href="https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code">Malwarebytes.com: Are QR code safe?</a></li>
-		<li><a target="_blank" href="https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan">Kaspersky.com: What is a QR code and are thet safe?</a></li>
-		<li><a target="_blank" href="https://www.computer.org/publications/tech-news/trends/qr-code-risks">Computer.org: Risks of Using QR Codes and How To Mitigate it</a></li>
+		<li><a target="_blank" href="https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/" data-TwoMi18n="article_1_title article_1_href[href]">Forbes.com: I Don't Scan QR Codes, And Neither Should You</a></li>
+		<li><a target="_blank" href="https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code" data-TwoMi18n="article_2_title article_2_href[href]">Malwarebytes.com: Are QR code safe?</a></li>
+		<li><a target="_blank" href="https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan" data-TwoMi18n="article_3_title article_3_href[href]">Kaspersky.com: What is a QR code and are thet safe?</a></li>
+		<li><a target="_blank" href="https://www.computer.org/publications/tech-news/trends/qr-code-risks" data-TwoMi18n="article_4_title article_4_href[href]">Computer.org: Risks of Using QR Codes and How To Mitigate it</a></li>
 	</ul>
 	<p data-TwoMi18n="stay_safe">Stay safe, and don't open random QrCodes.</p>
 	<p class="small" data-TwoMi18n="disclaimer1">This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.</p>
@@ -87,6 +87,14 @@ const languagesName = {
 			"disclaimer1": "This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.",
 			"disclaimer2": "Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.",
 			"disclaimer3": "Check out the source code on ",
+			"article_1_title": "Forbes.com: I Don't Scan QR Codes, And Neither Should You",
+			"article_1_href": "https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/",
+			"article_2_title": "Malwarebytes.com: Are QR code safe?",
+			"article_2_href": "https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code",
+			"article_3_title": "Kaspersky.com: What is a QR code and are thet safe?",
+			"article_3_href": "https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan",
+			"article_4_title": "Computer.org: Risks of Using QR Codes and How To Mitigate it",
+			"article_4_href": "https://www.computer.org/publications/tech-news/trends/qr-code-risks",
 		},
 		"fr": {
 			"website_language": "Langue du site:",
@@ -107,6 +115,14 @@ const languagesName = {
 			"disclaimer1": "Ce site web est destiné à des fins éducatives uniquement. Il ne s'engage pas dans le spamming ou l'appropriation.",
 			"disclaimer2": "De plus, ce site web ne stocke ni ne conserve aucune données personnelle de ses visiteurs. Les données affichées sur le site sont temporaires et sont supprimées dès que la session de l'utilisateur se termine.",
 			"disclaimer3": "Consultez le code source sur ",
+			"article_1_title": "Francenum.gouv.fr: QR Code : quelle sécurité et quelles précautions prendre ?",
+			"article_1_href": "https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques/cybersecurite/qr-code-quelle-securite-et-quelles",
+			"article_2_title": "01net.com: Méfiez-vous de ces codes QR qui peuvent vous coûter très cher",
+			"article_2_href": "https://www.01net.com/actualites/mefiez-vous-de-ces-codes-qr-qui-peuvent-vous-couter-tres-cher.html",
+			"article_3_title": "rtl.fr: Pourquoi il faut se méfier des QR codes",
+			"article_3_href": "https://www.rtl.fr/actu/sciences-tech/pourquoi-il-faut-se-mefier-des-qr-codes-7900258500",
+			"article_4_title": "lebigdata.fr: QR Code : le FBI met en garde contre les risques de sécurité",
+			"article_4_href": "https://www.lebigdata.fr/qr-code-fbi-securite",
 		},
 		"it": {
 			"website_language": "Lingua del sito:",
@@ -126,7 +142,15 @@ const languagesName = {
 			"stay_safe": "Stai al sicuro e non aprire QrCode casuali.",
 			"disclaimer1": "Questo sito web è destinato esclusivamente a scopi educativi. Non si occupa di spam o appropriazione.",
 			"disclaimer2": "Inoltre, questo sito web non memorizza né conserva alcun dato personale dei suoi visitatori. I dati visualizzati sul sito sono temporanei e vengono eliminati non appena termina la sessione dell'utente.",
-			"disclaimer3": "Consulta il codice sorgente su "
+			"disclaimer3": "Consulta il codice sorgente su ",
+			"article_1_title": "O1net.it: QR code, meglio non fidarsi: 7 consigli di sicurezza da CyberArk",
+			"article_1_href": "https://www.01net.it/qr-code-meglio-non-fidarsi-7-consigli-di-sicurezza-da-cyberark/",
+			"article_2_title": "insic.it: Come usare il QR Code in sicurezza",
+			"article_2_href": "https://www.insic.it/privacy-e-sicurezza/information-security/qr-code-come-utilizzarlo-in-sicurezza/",
+			"article_3_title": "casa.tiscali.it: I rischi nascosti dei QR Code. Come usarli senza avere problemi di sicurezza",
+			"article_3_href": "https://casa.tiscali.it/magazine/articoli/i-rischi-nascosti-nei-QR-Code/de989682-191a-11ee-8244-005056a86fbe/",
+			"article_4_title": "html.it: La sicurezza dei QR Code",
+			"article_4_href": "https://www.html.it/articoli/la-sicurezza-dei-qr-code/",
 		},
 		"nl": {
 			"website_language": "Website taal:",
@@ -146,35 +170,17 @@ const languagesName = {
 			"stay_safe": "Blijf veilig en open geen willekeurige QrCodes.",
 			"disclaimer1": "Deze website is uitsluitend bedoeld voor educatieve doeleinden. Het houdt zich niet bezig met spammen of toe-eigening.",
 			"disclaimer2": "Bovendien slaat deze website geen persoonlijke gegevens van zijn bezoekers op of behoudt deze niet. De gegevens die op de site worden weergegeven, zijn tijdelijk en worden verwijderd zodra de gebruikerssessie eindigt.",
-			"disclaimer3": "Bekijk de broncode op "
+			"disclaimer3": "Bekijk de broncode op ",
+			"article_1_title": "Qrcodechimp.com: QR-codebeveiliging: een complete gids voor merken en gebruikers",
+			"article_1_href": "https://nl.qrcodechimp.com/qr-code-security-guide/",
+			"article_2_title": "Politie.be: Veilig surfen: hackers gebruiken QR-codes om geld en gegevens te stelen",
+			"article_2_href": "https://www.politie.be/5998/nl/nieuws/veilig-surfen-hackers-gebruiken-qr-codes-om-geld-en-gegevens-te-stelen",
+			"article_3_title": "Androidplanet.nl: Phishing en quishing herkennen en voorkomen: zo bescherm je jezelf",
+			"article_3_href": "https://www.androidplanet.nl/nieuws/quishing-herkennen-en-voorkomen/",
+			"article_4_title": "Kaspersky.nl: Wat is een QR-code en zijn ze veilig?",
+			"article_4_href": "https://www.kaspersky.nl/resource-center/definitions/what-is-a-qr-code-how-to-scan",
 		}
 	}
-	const articles = {
-		"en": {
-			"https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/": "Forbes.com: I Don't Scan QR Codes, And Neither Should You",
-			"https://www.malwarebytes.com/cybersecurity/basics/what-is-a-qr-code": "Malwarebytes.com: Are QR code safe?",
-			"https://www.kaspersky.com/resource-center/definitions/what-is-a-qr-code-how-to-scan": "Kaspersky.com: What is a QR code and are thet safe?",
-			"https://www.computer.org/publications/tech-news/trends/qr-code-risks": "Computer.org: Risks of Using QR Codes and How To Mitigate it",
-		},
-		"fr": {
-			"https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques/cybersecurite/qr-code-quelle-securite-et-quelles": "Francenum.gouv.fr: QR Code : quelle sécurité et quelles précautions prendre ?",
-			"https://www.01net.com/actualites/mefiez-vous-de-ces-codes-qr-qui-peuvent-vous-couter-tres-cher.html": "01net.com: Méfiez-vous de ces codes QR qui peuvent vous coûter très cher",
-			"https://www.rtl.fr/actu/sciences-tech/pourquoi-il-faut-se-mefier-des-qr-codes-7900258500": "rtl.fr: Pourquoi il faut se méfier des QR codes",
-			"https://www.lebigdata.fr/qr-code-fbi-securite": "lebigdata.fr: QR Code : le FBI met en garde contre les risques de sécurité",
-		},
-		"it": {
-			"https://www.01net.it/qr-code-meglio-non-fidarsi-7-consigli-di-sicurezza-da-cyberark/": "O1net.it: QR code, meglio non fidarsi: 7 consigli di sicurezza da CyberArk",
-			"https://www.insic.it/privacy-e-sicurezza/information-security/qr-code-come-utilizzarlo-in-sicurezza/": " insic.it: Come usare il QR Code in sicurezza",
-			"https://casa.tiscali.it/magazine/articoli/i-rischi-nascosti-nei-QR-Code/de989682-191a-11ee-8244-005056a86fbe/": "casa.tiscali.it: I rischi nascosti dei QR Code. Come usarli senza avere problemi di sicurezza",
-			"https://www.html.it/articoli/la-sicurezza-dei-qr-code/": "html.it: La sicurezza dei QR Code"
-		},
-		"nl": {
-			"https://nl.qrcodechimp.com/qr-code-security-guide/": "Qrcodechimp.com: QR-codebeveiliging: een complete gids voor merken en gebruikers",
-			"https://www.politie.be/5998/nl/nieuws/veilig-surfen-hackers-gebruiken-qr-codes-om-geld-en-gegevens-te-stelen": "Politie.be: Veilig surfen: hackers gebruiken QR-codes om geld en gegevens te stelen",
-			"https://www.androidplanet.nl/nieuws/quishing-herkennen-en-voorkomen/": "Androidplanet.nl: Phishing en quishing herkennen en voorkomen: zo bescherm je jezelf",
-			"https://www.kaspersky.nl/resource-center/definitions/what-is-a-qr-code-how-to-scan": "Kaspersky.nl: Wat is een QR-code en zijn ze veilig?"
-		}
-	};
 
 	const languageSelector = document.getElementById("languages_selector");
 	languageSelector.addEventListener("change", (event) => {
@@ -203,26 +209,7 @@ const languagesName = {
 	 */
 	function handleTanslation(lang) {
 		mi18n.translateHTML(lang);
-		changeArticleByLang(lang);
 		languageSelector.value = lang;
-	}
-
-	/**
-	 * Change the articles list by language
-	 */
-	function changeArticleByLang(lang) {
-		
-		const articlesList = document.getElementById("articles");
-		articlesList.innerHTML = "";
-		for (const [link, title] of Object.entries(articles[lang])) {
-			const li = document.createElement("li");
-			const a = document.createElement("a");
-			a.href = link;
-			a.target = "_blank";
-			a.innerText = title.toString();
-			li.appendChild(a);
-			articlesList.appendChild(li);
-		}
 	}
 
 
