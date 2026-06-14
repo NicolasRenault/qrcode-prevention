@@ -3,8 +3,6 @@ import fs from "node:fs";
 const filePath = "./public/viewcounter.txt";
 
 export async function GET() {
-    console.log(Date.now());
-
     try {
         if (!fs.existsSync(filePath)) {
             console.error("File doesn't exist");
