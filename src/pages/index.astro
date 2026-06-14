@@ -1,4 +1,5 @@
 ---
+import ViewCounter from '../components/ViewCounter.astro';
 import Layout from '../layouts/Layout.astro';
 
 const languages = ["en", "fr", "it", "nl"];
@@ -54,6 +55,7 @@ const languagesName = {
 	<p class="small" data-TwoMi18n="disclaimer1">This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.</p>
 	<p class="small" data-TwoMi18n="disclaimer2">Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.</p>
 	<p class="small"><span data-TwoMi18n="disclaimer3">Check out the source code on </span><a target="_blank" href="https://github.com/NicolasRenault/qrcode-prevention" title="Github">GitHub</a>.</p>
+	<ViewCounter client:visible/>
 </Layout>
 
 <style>
@@ -87,6 +89,7 @@ const languagesName = {
 			"disclaimer1": "This website is intended for educational purposes only. It is not engaged in rendering spamming or appropriation.",
 			"disclaimer2": "Furthermore, this website does not store or retain any personal data from its visitors. The data displayed on the site is temporary and is deleted as soon as the user session ends.",
 			"disclaimer3": "Check out the source code on ",
+			"viewcounter": "Number of people that saw this page:",
 			"article_1_title": "Forbes.com: I Don't Scan QR Codes, And Neither Should You",
 			"article_1_href": "https://www.forbes.com/sites/forbestechcouncil/2020/06/01/i-dont-scan-qr-codes-and-neither-should-you/",
 			"article_2_title": "Malwarebytes.com: Are QR code safe?",
@@ -115,6 +118,7 @@ const languagesName = {
 			"disclaimer1": "Ce site web est destiné à des fins éducatives uniquement. Il ne s'engage pas dans le spamming ou l'appropriation.",
 			"disclaimer2": "De plus, ce site web ne stocke ni ne conserve aucune données personnelle de ses visiteurs. Les données affichées sur le site sont temporaires et sont supprimées dès que la session de l'utilisateur se termine.",
 			"disclaimer3": "Consultez le code source sur ",
+			"viewcounter": "Nombre de personnes ayant consulté cette page :",
 			"article_1_title": "Francenum.gouv.fr: QR Code : quelle sécurité et quelles précautions prendre ?",
 			"article_1_href": "https://www.francenum.gouv.fr/guides-et-conseils/protection-contre-les-risques/cybersecurite/qr-code-quelle-securite-et-quelles",
 			"article_2_title": "01net.com: Méfiez-vous de ces codes QR qui peuvent vous coûter très cher",
@@ -143,6 +147,7 @@ const languagesName = {
 			"disclaimer1": "Questo sito web è destinato esclusivamente a scopi educativi. Non si occupa di spam o appropriazione.",
 			"disclaimer2": "Inoltre, questo sito web non memorizza né conserva alcun dato personale dei suoi visitatori. I dati visualizzati sul sito sono temporanei e vengono eliminati non appena termina la sessione dell'utente.",
 			"disclaimer3": "Consulta il codice sorgente su ",
+			"viewcounter": "Numero di persone che hanno visualizzato questa pagina:",
 			"article_1_title": "O1net.it: QR code, meglio non fidarsi: 7 consigli di sicurezza da CyberArk",
 			"article_1_href": "https://www.01net.it/qr-code-meglio-non-fidarsi-7-consigli-di-sicurezza-da-cyberark/",
 			"article_2_title": "insic.it: Come usare il QR Code in sicurezza",
@@ -171,6 +176,7 @@ const languagesName = {
 			"disclaimer1": "Deze website is uitsluitend bedoeld voor educatieve doeleinden. Het houdt zich niet bezig met spammen of toe-eigening.",
 			"disclaimer2": "Bovendien slaat deze website geen persoonlijke gegevens van zijn bezoekers op of behoudt deze niet. De gegevens die op de site worden weergegeven, zijn tijdelijk en worden verwijderd zodra de gebruikerssessie eindigt.",
 			"disclaimer3": "Bekijk de broncode op ",
+			"viewcounter": "Aantal mensen dat deze pagina heeft bekeken:",
 			"article_1_title": "Qrcodechimp.com: QR-codebeveiliging: een complete gids voor merken en gebruikers",
 			"article_1_href": "https://nl.qrcodechimp.com/qr-code-security-guide/",
 			"article_2_title": "Politie.be: Veilig surfen: hackers gebruiken QR-codes om geld en gegevens te stelen",

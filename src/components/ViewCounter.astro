@@ -1,0 +1,32 @@
+---
+---
+
+<p class="small" style="display: none">
+    <span data-TwoMi18n="viewcounter">Number of people that saw this page:</span>
+    <span id="viewcounter"></span>
+</p>
+
+<script>
+    const viewcounter = document.getElementById("viewcounter");
+
+    try {
+        const response = await fetch(
+        "api/viewcounter",
+        );
+        
+        const data = await response.json();
+        const status = await response.status;
+
+        if (status == 200) {
+            console.log("Parsed data:", data.message);
+            console.log("Parsed error:", status);
+
+            viewcounter!.innerText = data.message;
+            viewcounter!.parentElement!.style.display = "block";
+        } else {
+            throw new Error(data);
+        }        
+    } catch (error) {
+        console.error(error);
+    }
+</script>
