@@ -1,3 +1,5 @@
+export const prerender = false;
+
 import fs from "node:fs";
 
 const filePath = "./public/viewcounter.txt";
